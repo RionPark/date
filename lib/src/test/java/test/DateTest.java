@@ -6,9 +6,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 public class DateTest{
 
-    private DateTest() {
-
-    }
     @Test
     public void testString() {
         IDate date = new Date(2008, 2, 6);
