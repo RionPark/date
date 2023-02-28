@@ -48,8 +48,12 @@ public class Date implements IDate {
 			}
 			days += 365;
 		}
-		for (int j = 0; j < date.getMonth(); j++) {
-			days += this.daysInMonth[j];
+		int[] daysInMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		if (date.isLeapYear()) {
+			daysInMonth[1] = 29;
+		}
+		for (int j = 0; j < date.getMonth()-1; j++) {
+			days += daysInMonth[j];
 		}
 		days += date.getDay();
 		return days;
